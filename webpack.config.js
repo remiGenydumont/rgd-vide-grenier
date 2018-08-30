@@ -10,7 +10,7 @@ Encore
 
     /*
      * ENTRY CONFIG
-     *  
+     *
      * Add 1 entry for each "page" of your app
      * (including one that's included on every page - e.g. "app")
      *

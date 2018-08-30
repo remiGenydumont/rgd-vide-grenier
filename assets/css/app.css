@@ -1,3 +1,44 @@
+header{
+    height: 50vh;
+    background: linear-gradient(45deg, #ffb900, #ff5b00);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 body {
-    background-color: lightgray;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.main-title{
+    font-family: 'Satisfy', cursive;
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.logo-default{
+    width: 100px;
+}
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.menu{
+    padding: 10px;
+    background: linear-gradient(45deg,#cccccc,#999999);
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.menu li{
+    margin: 0 10px;
+    list-style-type: none;
 }

@@ -4,11 +4,45 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <link href="{{ asset('build/app.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     </head>
     <body>
-        <div class="body-inner-container">
-            {% block body %}{% endblock %}
-            {% block javascripts %}{% endblock %}
-        </div>
+        <header>
+            <img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo-default" />
+            <h1 class="main-title">Village en fête</h1>
+        </header>
+        <nav>
+            <div class="container">
+                <div class="menu">
+                    <ul>
+                        <li><a href="">Accueil</a></li>
+                        {% if is_granted('ROLE_USER')%}
+                            <li><a href="">Profil</a></li>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN')%}
+                            <li><a href="">Admin</a></li>
+                        {% endif %}
+
+
+
+                        {% if is_granted('ROLE_USER') %}
+                            <li><a href="{{ path("fos_user_security_logout") }}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ path("fos_user_security_login") }}">Login</a></li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        {% block body %}{% endblock %}
+
+        <footer>
+
+        </footer>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
